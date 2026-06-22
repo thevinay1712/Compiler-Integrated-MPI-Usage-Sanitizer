@@ -21,16 +21,16 @@ Imagine MPI is a global postal network. Thousands of letters are moving between 
 ## Key Features
 
 * **Buffer Aliasing Detection:** Automatically catches overlapping read-write or write-write asynchronous operations (`MPI_Isend`, `MPI_Irecv`) to prevent silent data corruption.
-![Buffer Aliasing Bug](bug_4_buffer_aliasing.png)
+![Buffer Aliasing Bug](docs/images/bug_4_buffer_aliasing.png)
 
 * **Type & Size Mismatch Matching Engine:** Uses a deadlock-free FIFO matching engine at finalization to verify that base datatypes match and payloads do not overflow receiver buffers.
-![Type Mismatch Bug](Bug_2_type_mismatch.png)
+![Type Mismatch Bug](docs/images/Bug_2_type_mismatch.png)
 
 * **Immediate Deadlock Prevention:** Flags circular blocking calls (like sending to self) before execution stalls.
-![Deadlock Bug](Bug_1_Deadlock.png)
+![Deadlock Bug](docs/images/Bug_1_Deadlock.png)
 
 * **Null Pointer Protection:** Instantly stops execution if null-pointers are supplied to active send/receive calls.
-![Null Buffer Bug](bug_3_null_buffer.png)
+![Null Buffer Bug](docs/images/bug_3_null_buffer.png)
 
 * **Collective Validation:** Automatically checks that all participating MPI ranks execute the correct sequence of matching collectives (`MPI_Bcast`, `MPI_Reduce`).
 
@@ -41,10 +41,10 @@ Imagine MPI is a global postal network. Thousands of letters are moving between 
 MPISan has been evaluated against real-world applications to ensure it handles complex MPI communication patterns without false positives.
 
 ### LLNL's LULESH Proxy App
-![LULESH Evaluation](real_world_proxy_lules.png)
+![LULESH Evaluation](docs/images/real_world_proxy_lules.png)
 
 ### Custom MPI 2D Jacobi Solver
-![Jacobi Evaluation](Real_app_jacobi.png)
+![Jacobi Evaluation](docs/images/Real_app_jacobi.png)
 
 ---
 

@@ -20,5 +20,4 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Subdirectories
-add_subdirectory(src/pass)
-add_subdirectory(src/runtime)
+add_subdirectory(src/mpisan)
